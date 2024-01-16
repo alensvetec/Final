@@ -61,12 +61,20 @@ themeButton.addEventListener('click', () => {
 /* Reveal */
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '60px',
+    distance: '50px',
     duration: 2500,
 })
 
-sr.reveal('.home__data, .products__container, .footer__container, .footer__info')
+sr.reveal('.home__data, .contact__container, .footer__container, .footer__info, .about__container')
 sr.reveal('.home__images',{delay: 300, origin: 'bottom'})
-sr.reveal('.category__card, .brand__img',{interval: 100})
-sr.reveal('.contact__explore:nth-child(1)',{origin: 'right'})
-sr.reveal('.contact__explore:nth-child(2)',{origin: 'left'})
+sr.reveal('.products__card',{interval: 100})
+
+/* Burger menu*/
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerMenu = document.querySelector('.burger__menu');
+    const navLinks = document.querySelector('.nav__menu');
+
+    burgerMenu.addEventListener('click', function () {
+        navLinks.classList.toggle('show');
+    });
+});
